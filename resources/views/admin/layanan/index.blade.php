@@ -22,7 +22,7 @@
         @foreach ($layanans as $layanan)
         <tr>
           <td>{{ $loop->iteration }}</td>
-          <td>{!! $layanan->toko->nama !!}</td>
+          <td>{!! $layanan->nama_toko !!}</td>
           <td>{!! $layanan->jenis !!}</td>
           <td>
             <a href="/dashboard/layanan/{{ $layanan->id }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>

@@ -29,7 +29,7 @@ class TransaksiController extends Controller
         $user = auth()->user()->name;
         if($user){
             return view('admin.transaksi.index',[
-                'transaksis' => Transaksi::where('nama_toko','=' . $user)->get()
+                'transaksis' => Transaksi::where('nama_toko', '=', $user)->get()
             ]);
         }
     }

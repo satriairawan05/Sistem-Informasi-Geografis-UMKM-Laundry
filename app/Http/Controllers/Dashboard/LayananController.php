@@ -28,7 +28,7 @@ class LayananController extends Controller
         if($user)
         {
             return view('admin.layanan.index',[
-                'layanans' => Layanan::where('nama_toko','=' . $user)->get()
+                'layanans' => Layanan::where('nama_toko', '=', $user)->get()
             ]);
         }
     }

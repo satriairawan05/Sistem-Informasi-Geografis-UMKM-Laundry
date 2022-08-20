@@ -15,7 +15,7 @@ class LayananFactory extends Factory
     {
         return [
             'jenis' => $this->faker->sentence(),
-            'toko_id' => mt_rand(1,30)
+            'nama_toko' => $this->faker->company()
         ];
     }
 }

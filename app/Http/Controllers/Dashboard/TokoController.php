@@ -17,9 +17,21 @@ class TokoController extends Controller
      */
     public function index()
     {
-        return view('admin.usaha.index',[
-            'tokos' => Toko::orderBy('id','DESC')->get()
-        ]);
+        $admin = auth()->user()->is_admin;
+        if($admin)
+        {
+            return view('admin.usaha.index',[
+                'tokos' => Toko::latest()->get()
+            ]);
+        }
+
+        $user = auth()->user()->name;
+        if($user)
+        {
+            return view('admin.usaha.index',[
+                'tokos' => Toko::where('nama', '=', $user)->get()
+            ]);
+        }
     }
 
     /**

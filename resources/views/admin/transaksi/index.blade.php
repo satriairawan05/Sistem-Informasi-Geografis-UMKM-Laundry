@@ -17,8 +17,6 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
-          <th>Status Pesanan</th>
-          <th>Jenis Layanan</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -30,8 +28,6 @@
           <td name="nama_toko">{!! $transaksi->nama_toko !!}</td>
           <td>{!! $transaksi->nama !!}</td>
           <td>{!! $transaksi->token !!}</td>
-          <td>{!! $transaksi->status->status !!}</td>
-          <td>{!! $transaksi->layanan->jenis !!}</td>
           <td>
             {{-- <a href="/dashboard/transaksi/{{ $transaksi->id }}" class="btn btn-info"><i data-feather="eye"></i></a>| --}}
             <a href="/dashboard/transaksi/{{ $transaksi->id }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
@@ -53,8 +49,6 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
-          <th>Status Pesanan</th>
-          <th>Jenis Layanan</th>
           <th>Action</th>
         </tr>
       </tfoot>

@@ -16,8 +16,8 @@ class Layanan extends Model
     protected $guarded = 'id';
 
     protected $fillable = [
+        'nama_toko',
         'jenis',
-        'toko_id'
     ];
 
     /**
