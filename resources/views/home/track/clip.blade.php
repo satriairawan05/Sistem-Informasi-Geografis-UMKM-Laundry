@@ -13,7 +13,7 @@
   </div>
 </div>
 
-@if($request->search)
+@if($tracks->all())
 <div class="container">
   <div class="row m-lg-2">
     @foreach ($tracks as $data)
