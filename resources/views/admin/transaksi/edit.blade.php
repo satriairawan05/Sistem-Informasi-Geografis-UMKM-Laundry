@@ -39,20 +39,15 @@
       <div class="form-group row mb-2">
         <label for="toko_id" class="col-sm-3 text-end control-label col-form-labe">Nama Usaha</label>
         <div class="col-md-6">
-          <select class="form-select" name="toko_id">
-            @foreach($tokos as $toko)
-                @if(old('toko_id', $transaksis->toko_id) == $toko->id)
-                <option value="{{ $toko->id }}" selected>{{ $toko->nama }}</option>
-                @else
-                <option value="{{ $toko->id }}">{{ $toko->nama }}</option>
-                @endif
-            @endforeach
-          </select>
+        <input type="text" class="form-control @error('nama_toko')
+                  is-invalid
+              @enderror" id="nama_toko" name="nama_toko" placeholder="Nama Usaha" required value="{{ auth()->user()->name }}" readonly />
           @error('toko_id')
           <div class="invalid-feedback">
             {{ $message }}
           </div>
           @enderror
+        </div>
         </div>
       </div>
       <div class="form-group row mb-2">
