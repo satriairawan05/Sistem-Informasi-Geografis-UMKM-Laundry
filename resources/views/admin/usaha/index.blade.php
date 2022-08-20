@@ -56,11 +56,13 @@
           <td>{!! $toko->alamat !!}</td>
           <td>
             <a href="/dashboard/toko/{{ $toko->nama }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
+            @can('admin')
             <form action="/dashboard/toko/{{ $toko->nama }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/toko/{{ strtolower($toko->nama) }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
+            @endcan
           </td>
         </tr>
         @endforeach
