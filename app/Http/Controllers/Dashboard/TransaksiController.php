@@ -19,15 +19,17 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->is_admin){
+        $admin = auth()->user()->is_admin;
+        if($admin){
             return view('admin.transaksi.index',[
                 'transaksis' => Transaksi::latest()->get()
             ]);
         }
 
-        if(auth()->user()->name){
+        $user = auth()->user()->name;
+        if($user){
             return view('admin.transaksi.index',[
-                'transaksis' => Transaksi::where('nama_toko','=' . auth()->user()->name)->get()
+                'transaksis' => Transaksi::where('nama_toko','=' . $user)->get()
             ]);
         }
     }

@@ -16,9 +16,21 @@ class LayananController extends Controller
      */
     public function index()
     {
-        return view('admin.layanan.index',[
-            'layanans' => Layanan::with('toko')->orderBy('id','DESC')->get()
-        ]);
+        $admin = auth()->user()->is_admin;
+        if($admin)
+        {
+            return view('admin.layanan.index',[
+                'layanans' => Layanan::latest()->get()
+            ]);
+        }
+
+        $user = auth()->user()->name;
+        if($user)
+        {
+            return view('admin.layanan.index',[
+                'layanans' => Layanan::where('nama_toko','=' . $user)->get()
+            ]);
+        }
     }
 
     /**
