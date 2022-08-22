@@ -15,7 +15,7 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('toko_id');
+            // $table->foreignId('toko_id')->nullable();
             $table->foreignId('layanan_id');
             $table->foreignId('status_id');
             $table->string('nama')->nullable();

@@ -61,7 +61,7 @@ class TransaksiController extends Controller
             'nama' => 'required|string',
             'nama_toko' => 'required|string',
             'token' => 'required|string|unique:transaksis',
-            'toko_id' => 'required',
+            // 'toko_id' => 'required',
             'status_id' => 'required',
             'layanan_id' => 'required',
         ]);
@@ -136,9 +136,9 @@ class TransaksiController extends Controller
             }
         }
 
-        if($transaksi->toko_id != $request->toko_id){
-            $rules['toko_id'] = 'required';
-        }
+        // if($transaksi->toko_id != $request->toko_id){
+        //     $rules['toko_id'] = 'required';
+        // }
 
         if($transaksi->layanan_id != $request->layanan_id){
             $rules['layanan_id'] = 'required';

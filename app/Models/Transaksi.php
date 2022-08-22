@@ -23,7 +23,7 @@ class Transaksi extends Model
         'nama',
         'berat',
         'token',
-        'toko_id',
+        // 'toko_id',
         'layanan_id',
         'status_id'
     ];
@@ -87,7 +87,7 @@ class Transaksi extends Model
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function($query, $search){
-            return $query->where('nama','like', '%' . $search . '%')
+            return $query->where('nama_toko','like', '%' . $search . '%')
             ->orWhere('token','like', '%' . $search . '%');
         });
     }

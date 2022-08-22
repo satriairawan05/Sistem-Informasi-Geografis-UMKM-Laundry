@@ -35,12 +35,12 @@
         </div>
       </div>
       <div class="form-group row mb-2">
-        <label for="toko_id" class="col-sm-3 text-end control-label col-form-labe">Nama Usaha</label>
+        <label for="nama_toko" class="col-sm-3 text-end control-label col-form-labe">Nama Usaha</label>
         <div class="col-md-6">
         <input type="text" class="form-control @error('nama_toko')
                   is-invalid
               @enderror" id="nama_toko" name="nama_toko" placeholder="Nama Usaha" required value="{{ auth()->user()->name }}" readonly />
-          @error('toko_id')
+          @error('nama_toko')
           <div class="invalid-feedback">
             {{ $message }}
           </div>
