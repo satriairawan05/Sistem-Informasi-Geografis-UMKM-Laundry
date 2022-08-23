@@ -16,17 +16,6 @@ class Titik extends Model
     protected $table = 'tokos';
     protected $guarded = 'id';
 
-
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'nama';
-    }
-
     /**
      * Get the layanan that owns the Titik
      *

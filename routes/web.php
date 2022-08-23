@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\TitikController;
 use App\Http\Controllers\Dashboard\StatusController;
 use App\Http\Controllers\Dashboard\LayananController;
 use App\Http\Controllers\Dashboard\TransaksiController;
+use App\Models\Titik;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +37,7 @@ Route::get('/about', function () {
 
 // seluruh titik laundry
 Route::get('/', [PetaController::class, 'index'])->name('peta.index');
-Route::get('/peta/{peta:nama}', [PetaController::class, 'show'])->name('peta.show');
-
-// seluruh data laundry beserta titik
-Route::get('/cari', [MapController::class, 'index'])->name('cari.index');
-Route::get('/cari/{peta:nama}', [MapController::class, 'show'])->name('cari.show')->scopeBindings();
+Route::get('/peta/{peta}', [PetaController::class, 'show'])->name('peta.show');
 
 // tracking transaksi berdasarkan token
 Route::get('/transaksi', [TransaksiHomeController::class, 'index'])->name('track.index');
@@ -53,7 +50,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::resource('/dashboard/titik', TitikController::class)->only(['index', 'show']);
+    Route::resource('/dashboard/titik', TitikController::class)->only(['index','show']);
     Route::resource('/dashboard/status', StatusController::class)->middleware('admin');
     Route::resource('/dashboard/transaksi', TransaksiController::class)->except(['show']);
     Route::resource('/dashboard/toko', TokoController::class)->except(['show']);

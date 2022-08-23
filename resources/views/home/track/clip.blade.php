@@ -24,7 +24,7 @@
           <h5 class="card-title">{!! $data->nama_toko !!}</h5>
           <p class="card-text">Token : {!! $data->token !!}</p>
           <p class="card-text">Nama Pemesan : {!! $data->nama !!}</p>
-          {{-- <a href="/transaksi/{{ $data->token }}" class="btn btn-dark">Lihat Token</a> --}}
+          <p class="card-text">Status Pesanan : {!! $data->status->status !!}</p>
         </div>
       </div>
     </div>
@@ -34,5 +34,13 @@
 @else
 <p class="d-flex justify-content-center align-items-center fs-2 text-danger bar">Not Found</p>
 @endif
+
+@if(!request())
+    <p class="d-flex justify-content-center align-items-center fs-2 text-danger bar">Silakan Mulai Mencari</p>
+@endif
+
+@if(request(['search']))
 {{ $tracks->links() }}
+@endif
+
 @endsection

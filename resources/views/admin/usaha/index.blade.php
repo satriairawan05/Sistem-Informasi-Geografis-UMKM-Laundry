@@ -40,7 +40,7 @@
           </td>
           @endif
           @if($toko->image)
-          <td><img src="{{ asset('storage/'. $toko->image) }}" alt="{{ $toko->nama }}" class="img-fluid img-thumbnail h-50 w-50"></td>
+          <td><img src="{{ asset('storage/'. $toko->image) }}" alt="{{ $toko->nama }}" class="img-fluid img-thumbnail"></td>
           @else
           <td>
             <p class="text-danger text-bold text-capitalize h5">Not Found</p>

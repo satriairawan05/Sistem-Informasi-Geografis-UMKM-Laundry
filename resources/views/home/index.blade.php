@@ -78,7 +78,7 @@
                     .bindPopup('<?= $data->nama ?>'+ '<br>' + '<?= $data->alamat ?>' + '<br>' + '<?= $data->no_hp ?>' +'<br>'+
                         '<button class="btn btn-info mb-2" onclick="dariSini(<?= $data->x ?>, <?= $data->y ?>)">Dari Sini</button>'+
                         '<br><button class="btn btn-info mb-2" onclick="keSini(<?= $data->x ?>, <?= $data->y ?>)">Ke Sini</button>'+
-                        '<br><a href="/peta/<?= strtolower($data->nama) ?>" class="text-decoration-none text-dark">Selengkapnya</a>')
+                        '<br><a href="/peta/<?= $data->id ?>" class="text-decoration-none text-dark">Selengkapnya</a>')
                     .openPopup();
                 <?php } ?>
             </script>

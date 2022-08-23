@@ -24,37 +24,6 @@
                     <?php } ?>
                 ];
 
-                //layer contain searched elements
-                var markersLayer = new L.LayerGroup();
-                map.addLayer(markersLayer);
-
-                //Routing Machine Liedman
-                var control=L.Routing.control({
-                    //ambil koordinat berada sekarang
-                    waypoints: [
-                    //L.latLng(-0.5516380071640015, 117.11798858642578),
-                    //L.latLng(curr_latitude, curr_longitude),
-                    //L.latLng(-0.5504058599472046, 117.12004852294922)
-                    ],
-                    routeWhileDragging: true,
-                    geocoder: L.Control.Geocoder.nominatim()
-                })
-                .on('routesfound', function(e) {
-                    var routes = e.routes;
-                    alert('Found ' + routes.length + ' route(s).');
-                })
-                .addTo(map);
-
-                function dariSini(lat,lng){
-                var latLng= L.latLng(lat, lng);
-                control.spliceWaypoints(0, 1, latLng);
-                }
-
-                function keSini(lat,lng){
-                var latLng= L.latLng(lat, lng);
-                control.spliceWaypoints(control.getWaypoints().length - 1, 1, latLng);
-                }
-
                 //Search dengan menandai titik yang dicari
                 map.addControl( new L.Control.Search({
                     layer: markersLayer,
@@ -79,7 +48,7 @@
 
                     L.circleMarker([ <?= $data->x ?>, <?= $data->y ?>]).addTo(map)
                     .bindPopup('<?= $data->nama ?>'+ '<br>' + '<?= $data->alamat ?>' + '<br>' + '<?= $data->no_hp ?>' +
-                        '<br><a href="/dashboard/titik/<?= strtolower($data->nama) ?>" class="text-decoration-none text-dark">Selengkapnya</a>')
+                        '<br><a href="/dashboard/titik/<?= $data->id ?>" class="text-decoration-none text-dark">Selengkapnya</a>')
                     .openPopup();
                 </script>
             @endforeach

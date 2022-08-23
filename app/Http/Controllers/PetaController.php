@@ -49,7 +49,7 @@ class PetaController extends Controller
     public function show(Peta $peta)
     {
         return view('home.show',[
-            'maps' => Peta::find($peta)
+            'maps' => Peta::where('id','=', $peta->id)->get()
         ]);
     }
 

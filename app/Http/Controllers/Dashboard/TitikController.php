@@ -57,7 +57,7 @@ class TitikController extends Controller
     public function show(Titik $titik)
     {
         return view('admin.kordinat.show',[
-            'kordinats' => Titik::with(['layanan','status','transaksi'])->find($titik)
+            'kordinats' => Titik::where('id','=', $titik->id)->get()
         ]);
     }
 
