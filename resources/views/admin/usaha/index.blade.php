@@ -7,7 +7,9 @@
 </div>
 @endif
 <div class="container-fluid">
+  @cannot('admin')
   <a href="/dashboard/toko/create" class="btn btn-success mb-2"><i data-feather="file-plus"></i></a>
+  @endcannot
   <div class="table-responsive">
     <table class="table table-striped table-bordered" id="myTable">
       <thead>
@@ -18,7 +20,9 @@
           <th>Images</th>
           <th>No HP</th>
           <th>Alamat</th>
+          @cannot('admin')
           <th>Action</th>
+          @endcannot
         </tr>
       </thead>
       <tbody>
@@ -55,14 +59,14 @@
           @endif
           <td>{!! $toko->alamat !!}</td>
           <td>
+            @cannot('admin')
             <a href="/dashboard/toko/{{ $toko->nama }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
-            @can('admin')
             <form action="/dashboard/toko/{{ $toko->nama }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/toko/{{ strtolower($toko->nama) }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
-            @endcan
+            @endcannot
           </td>
         </tr>
         @endforeach
@@ -75,7 +79,9 @@
           <th>Images</th>
           <th>No HP</th>
           <th>Alamat</th>
+          @cannot('admin')
           <th>Action</th>
+          @endcannot
         </tr>
       </tfoot>
     </table>

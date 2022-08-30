@@ -2,12 +2,14 @@
 
 @section('content')
 @if(session('success'))
-    <div class="alert alert-success container container-fluid" role="alert">
-    {{ session('success') }}
-    </div>
+<div class="alert alert-success container container-fluid" role="alert">
+  {{ session('success') }}
+</div>
 @endif
 <div class="container-fluid">
+  @cannot('admin')
   <a href="/dashboard/transaksi/create" class="btn btn-success mb-2"><i data-feather="file-plus"></i></a>
+  @endcannot
   <div class="table-responsive">
     <table class="table table-striped table-bordered" id="myTable">
       <thead>
@@ -17,7 +19,9 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
+          @cannot('admin')
           <th>Action</th>
+          @endcannot
         </tr>
       </thead>
       <tbody>
@@ -30,14 +34,14 @@
           <td>{!! $transaksi->token !!}</td>
           <td>
             {{-- <a href="/dashboard/transaksi/{{ $transaksi->id }}" class="btn btn-info"><i data-feather="eye"></i></a>| --}}
+            @cannot('admin')
             <a href="/dashboard/transaksi/{{ $transaksi->id }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
-            @can('admin')
             <form action="/dashboard/transaksi/{{ $transaksi->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/transaksi/{{ $transaksi->id }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
-            @endcan
+            @endcannot
           </td>
         </tr>
         @endforeach
@@ -49,7 +53,9 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
+          @cannot('admin')
           <th>Action</th>
+          @endcannot
         </tr>
       </tfoot>
     </table>
