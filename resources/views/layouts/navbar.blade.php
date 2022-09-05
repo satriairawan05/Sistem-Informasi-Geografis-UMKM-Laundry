@@ -1,20 +1,20 @@
 <style>
   .navbar-nav .nav-link.active {
-    color: #dc3545;
+    color: #f09876;
   }
 
   .navbar-nav .nav-link:hover {
-    color: #dc3545;
+    color: #f09876;
   }
 
   .navbar-brand:hover {
-    color: #dc3545;
+    color: #f09876;
   }
 
 </style>
 <!-- Navbar -->
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container-fluid">
       @guest
       <a class="navbar-brand" href="/">{{ env('APP_NAME') }}</a>
