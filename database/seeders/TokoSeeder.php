@@ -31,7 +31,7 @@ class TokoSeeder extends Seeder
             'x' => '-0.465523',
             'y' => '117.172613',
             'jam_buka' => $jam_buka,
-            'jam_tutup' => $jam_tutup,
+            'jam_tutup' => '20:00:00',
             'nama' => 'Putri Laundry',
             'no_hp' => '082122074447',
             'alamat' => 'Jl. DI Panjaitan No. 10, Sungai Pinang Dalam, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur'
@@ -51,7 +51,7 @@ class TokoSeeder extends Seeder
             'x' => '-0.475619',
             'y' => '117.14688',
             'jam_buka' => $jam_buka,
-            'jam_tutup' => $jam_tutup,
+            'jam_tutup' => '18:00:00',
             'nama' => 'Wei Laundry',
             'no_hp' => '082154596305',
             'alamat' => 'Jl. Elang Di No.52, Sungai Pinang Dalam, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75242'
@@ -71,7 +71,7 @@ class TokoSeeder extends Seeder
             'x' => '-0.499446',
             'y' => '117.120027',
             'jam_buka' => $jam_buka,
-            'jam_tutup' => $jam_tutup,
+            'jam_tutup' => '19:00:00',
             'nama' => 'Kartika Laundry Mart',
             'no_hp' => '081346001655',
             'alamat' => 'Jl. KS Tubun Dalam, Dadi Mulya, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75243'
@@ -101,7 +101,7 @@ class TokoSeeder extends Seeder
             'x' => '-0.513633',
             'y' => '117.113103',
             'jam_buka' => $jam_buka,
-            'jam_tutup' => $jam_tutup,
+            'jam_tutup' => '17:00:00',
             'nama' => 'Assalamualaikum Laundry',
             'no_hp' => '082226639483',
             'alamat' => 'Jl. Adam Malik No.27, Karang Asam Ilir, Kec. Sungai Kunjang, Kota Samarinda, Kalimantan Timur 75243'
