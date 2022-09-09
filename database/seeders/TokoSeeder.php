@@ -21,7 +21,7 @@ class TokoSeeder extends Seeder
             'x' => '-0.471852',
             'y' => '117.160556',
             'jam_buka' => $jam_buka,
-            'jam_tutup' => $jam_tutup,
+            'jam_tutup' => '16:00:00',
             'nama' => 'Alby Laundry',
             'no_hp' => '08125461564',
             'alamat' => 'Jl. Gelatik 2 No. 1, Sungai Pinang Dalam, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur'

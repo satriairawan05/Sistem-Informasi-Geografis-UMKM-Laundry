@@ -98,7 +98,7 @@
                         '<br><a href="/peta/<?= $data->id ?>" class="text-decoration-none text-dark">Selengkapnya</a>').openPopup();
 
                     @if(\Carbon\Carbon::now()->format('H:i')>=$data->jam_buka && \Carbon\Carbon::now()->format('H:i:s')<=$data->jam_tutup)
-                        var markerLayers = L.marker([<?= $data->x ?>, <?= $data->y ?>],{icon: greenIcon}).addTo(map);
+                        var markerLayers = L.marker([<?= $data->x ?>, <?= $data->y ?>]).addTo(map);
                     @else
                         var markerLayers = L.marker([<?= $data->x ?>, <?= $data->y ?>],{icon: redIcon}).addTo(map);
                     @endif
