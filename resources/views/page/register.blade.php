@@ -17,7 +17,7 @@
                   </div>
                   <form class="form-group user" action="{{ route('register') }}" method="post">
                     @csrf
-                    <div class="form-group">
+                    <div class="form-group my-3">
                       <input type="text" class="form-control form-control-user @error('name') is-invalid @enderror" id="name" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                       @error('name')
                       <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
                       </span>
                       @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group my-3">
                       <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                       @error('email')
                       <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
                       </span>
                       @enderror
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row my-3">
                       <div class="col-md-6 mb-3 mb-sm-0">
                         <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" placeholder="Password" name="password" required autocomplete="current-password">
                         @error('password')
@@ -46,7 +46,9 @@
                         <input type="password" class="form-control form-control-user" id="password-confirm" placeholder="Password" name="password_confirmation" required autocomplete="new-password">
                       </div>
                     </div>
-                    <button class="btn btn-danger btn-user btn-block" type="submit">Sign Up</button>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button class="btn btn-dark btn-user btn-block" type="submit">Sign Up</button>
+                    </div>
                     <hr>
                   </form>
                   <div class="text-center">

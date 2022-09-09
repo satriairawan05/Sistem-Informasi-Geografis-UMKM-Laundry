@@ -20,7 +20,7 @@
                     </div>
                     <form class="form-group user" action="{{ route('login') }}" method="post">
                       @csrf
-                      <div class="form-group">
+                      <div class="form-group my-3">
                         <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address..." value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                         </span>
                         @enderror
                       </div>
-                      <div class="form-group">
+                      <div class="form-group my-3">
                         <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" placeholder="Password" required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,9 @@
                         </span>
                         @enderror
                       </div>
-                      <button class="btn btn-danger btn-user btn-block" type="submit">Sign In</button>
+                      <div class="col-md-12 d-flex justify-content-center">
+                        <button class="btn btn-dark btn-user btn-block" type="submit">Sign In</button>
+                      </div>
                     </form>
                     <hr>
                     <div class="text-center">

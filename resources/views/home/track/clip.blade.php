@@ -7,7 +7,7 @@
       @csrf
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search by Token & Laundry Name ..." name="search" value="{{ request('search') }}">
-        <button class="btn btn-danger" type="submit">Search</button>
+        <button class="btn btn-dark" type="submit">Search</button>
       </div>
     </form>
   </div>
@@ -32,7 +32,7 @@
   </div>
 </div>
 @else
-<p class="d-flex justify-content-center align-items-center fs-2 text-danger bar">Not Found</p>
+<p class="d-flex justify-content-center align-items-center fs-2 text-dark bar">Not Found</p>
 @endif
 
 @if(!request())
