@@ -7,9 +7,7 @@
 </div>
 @endif
 <div class="container-fluid">
-  @cannot('admin')
   <a href="/dashboard/toko/create" class="btn btn-success mb-2"><i data-feather="file-plus"></i></a>
-  @endcannot
   <div class="table-responsive">
     <table class="table table-striped table-bordered" id="myTable">
       <thead>
