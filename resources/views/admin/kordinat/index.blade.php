@@ -98,7 +98,7 @@
                     L.circleMarker([ <?= $data->x ?>, <?= $data->y ?>]).addTo(map).bindPopup('<?= $data->nama ?>'+ '<br>' + '<?= $data->alamat ?>' + '<br>' + '<?= $data->no_hp ?>' +'<br> Jam Operasional : '+' <?= $data->jam_buka ?>' +' : '+'<?= $data->jam_tutup ?>' +'<br>'+'{!! \Carbon\Carbon::now()->format('H:i:s')>=$data->jam_buka&&\Carbon\Carbon::now()->format('H:i:s')<$data->jam_tutup?'<span class="text-success"> Buka</span>':'<span class=" text-danger"> Tutup</span>' !!}' +'<br><br>'+
                         '<button class="btn btn-info btn-sm mb-2" onclick="dariSini(<?= $data->x ?>, <?= $data->y ?>)">Dari Sini</button>'+
                         '<br><button class="btn btn-info btn-sm mb-2" onclick="keSini(<?= $data->x ?>, <?= $data->y ?>)">Ke Sini</button>'+
-                        '<br><a href="/dashboard/titik/<?= strtolower($data->nama) ?>" class="text-decoration-none text-dark">Selengkapnya</a>').openPopup();
+                        '<br><a href="/dashboard/titik/<?= $data->id ?>" class="text-decoration-none text-dark">Selengkapnya</a>').openPopup();
 
                     @if(\Carbon\Carbon::now()->format('H:i')>=$data->jam_buka && \Carbon\Carbon::now()->format('H:i:s')<=$data->jam_tutup)
                         var markerLayers = L.marker([<?= $data->x ?>, <?= $data->y ?>]).addTo(map);
