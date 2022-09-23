@@ -20,9 +20,7 @@
           <th>Images</th>
           <th>No HP</th>
           <th>Alamat</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </thead>
       <tbody>
@@ -59,14 +57,12 @@
           @endif
           <td>{!! $toko->alamat !!}</td>
           <td>
-            @cannot('admin')
             <a href="/dashboard/toko/{{ $toko->nama }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
             <form action="/dashboard/toko/{{ $toko->nama }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/toko/{{ strtolower($toko->nama) }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
-            @endcannot
           </td>
         </tr>
         @endforeach
@@ -79,9 +75,7 @@
           <th>Images</th>
           <th>No HP</th>
           <th>Alamat</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </tfoot>
     </table>

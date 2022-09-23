@@ -17,9 +17,7 @@
           <th>No</th>
           <th>Nama Usaha</th>
           <th>Jenis</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </thead>
       <tbody>
@@ -29,14 +27,12 @@
           <td>{!! $layanan->nama_toko !!}</td>
           <td>{!! $layanan->jenis !!}</td>
           <td>
-            @cannot('admin')
             <a href="/dashboard/layanan/{{ $layanan->id }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
             <form action="/dashboard/layanan/{{ $layanan->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/layanan/{{ $layanan->id }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
-            @endcannot
           </td>
         </tr>
         @endforeach
@@ -46,9 +42,7 @@
           <th>No</th>
           <th>Nama Usaha</th>
           <th>Jenis</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </tfoot>
     </table>

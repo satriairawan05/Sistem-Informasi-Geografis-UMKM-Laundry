@@ -19,9 +19,7 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </thead>
       <tbody>
@@ -34,14 +32,12 @@
           <td>{!! $transaksi->token !!}</td>
           <td>
             {{-- <a href="/dashboard/transaksi/{{ $transaksi->id }}" class="btn btn-info"><i data-feather="eye"></i></a>| --}}
-            @cannot('admin')
             <a href="/dashboard/transaksi/{{ $transaksi->id }}/edit" class="btn btn-warning"><i data-feather="edit"></i></a>
             <form action="/dashboard/transaksi/{{ $transaksi->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
               <button href="/dashboard/transaksi/{{ $transaksi->id }}" class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')"><i data-feather="trash"></i></button>
             </form>
-            @endcannot
           </td>
         </tr>
         @endforeach
@@ -53,9 +49,7 @@
           <th>Nama Usaha</th>
           <th>Nama Client</th>
           <th>Client Token</th>
-          @cannot('admin')
           <th>Action</th>
-          @endcannot
         </tr>
       </tfoot>
     </table>
